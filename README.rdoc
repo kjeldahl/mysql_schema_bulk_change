@@ -34,7 +34,7 @@ a lot less time, especially if the table is large.
 
 == INSTALL:
 
-* sudo gem install jacob_kjeldahl-mysql_schema_bulk_change --source http://gems.github.com
+* sudo gem install kjeldahl-mysql_schema_bulk_change --source http://gems.github.com
 
 == LICENSE:
 
