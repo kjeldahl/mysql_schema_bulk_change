@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jacob Kjeldahl"]
-  s.cert_chain = ["/Users/jacobkjeldahl/.gem/gem-public_cert.pem"]
+  #s.cert_chain = ["/Users/jacobkjeldahl/.gem/gem-public_cert.pem"]
   s.date = %q{2009-04-28}
   s.description = %q{This extension to the MysqlAdapter in ActiveRecord enables bulk updates to schema definitions.  Pr. default when calling connection#add_column the change will be executed a once, but Mysql allows for multiple changes to be executed in one SQL statement (http://dev.mysql.com/doc/refman/5.1/en/alter-table.html). The advantage of this is that it takes a lot less time, especially if the table is large.}
   s.email = ["jkj@lenio.dk"]
