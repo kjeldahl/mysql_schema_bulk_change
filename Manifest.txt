@@ -1,0 +1,16 @@
+History.txt
+Manifest.txt
+README.rdoc
+Rakefile
+features/development.feature
+features/step_definitions/common_steps.rb
+features/support/env.rb
+lib/mysql_schema_bulk_change.rb
+lib/mysql_schema_bulk_change/mysql_adapter.rb
+script/console
+script/destroy
+script/generate
+spec/mysql_schema_bulk_change_spec.rb
+spec/spec.opts
+spec/spec_helper.rb
+tasks/rspec.rake

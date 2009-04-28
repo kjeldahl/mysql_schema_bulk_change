@@ -1,0 +1,66 @@
+= mysql_schema_bulk_change
+
+* http://github.com/jacob_kjeldahl/mysql_schema_bulk_change
+
+== DESCRIPTION:
+
+This extension to the MysqlAdapter in ActiveRecord enables bulk updates to schema definitions.
+
+Pr. default when calling connection#add_column the change will be executed a once, but Mysql
+allows for multiple changes to be executed in one SQL statement (http://dev.mysql.com/doc/refman/5.1/en/alter-table.html). The advantage of this is that it takes
+a lot less time, especially if the table is large.
+
+== FEATURES/PROBLEMS:
+
+* Bulk updates to schema definitions when using connection.change_table do |table|
+
+Missing features:
+
+* Not all methods have been implemented. The rest will auto update the database and continue
+* Implemented methods are: column, remove, index, remove_index, all types like .integer and .string..
+
+== SYNOPSIS:
+
+  In a migration:
+  
+  change_table :large_table do |t|
+    t.string :name
+    t.column :name, :string
+    t.index :name => 'index_on_name'
+    t.remove_index :name => 'index_on_author'
+    t.remove_columns :auhor_id, :editor_id
+  end
+
+== REQUIREMENTS:
+
+* ActiveRecord 2.3.2
+* Mysql
+
+== INSTALL:
+
+* sudo gem install jacob_kjeldahl-mysql_schema_bulk_change --source http://gems.github.com
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2009 Jacob Kjeldahl
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
