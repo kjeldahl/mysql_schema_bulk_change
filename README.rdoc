@@ -13,11 +13,7 @@ a lot less time, especially if the table is large.
 == FEATURES/PROBLEMS:
 
 * Bulk updates to schema definitions when using connection.change_table do |table|
-
-Missing features:
-
-* Not all methods have been implemented. The rest will auto update the database and continue
-* Implemented methods are: column, remove, index, remove_index, all types like .integer and .string..
+* Use the old approch using change_table_direct
 
 == SYNOPSIS:
 
@@ -28,7 +24,7 @@ Missing features:
     t.column :name, :string
     t.index :name => 'index_on_name'
     t.remove_index :name => 'index_on_author'
-    t.remove_columns :auhor_id, :editor_id
+    t.remove :auhor_id, :editor_id
   end
 
 == REQUIREMENTS:
