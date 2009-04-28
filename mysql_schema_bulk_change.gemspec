@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{mysql_schema_bulk_change}
   s.rubygems_version = %q{1.3.1}
-  s.signing_key = %q{/Users/jacobkjeldahl/.gem/gem-private_key.pem}
+  #s.signing_key = %q{/Users/jacobkjeldahl/.gem/gem-private_key.pem}
   s.summary = %q{This extension to the MysqlAdapter in ActiveRecord enables bulk updates to schema definitions}
 
   if s.respond_to? :specification_version then
