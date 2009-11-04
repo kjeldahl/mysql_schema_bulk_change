@@ -35,6 +35,7 @@ def runcoderun?
   ENV["RUN_CODE_RUN"]
 end
 
+remove_task :default
 if runcoderun?
   task :default => [:create_db, :spec]
 else
