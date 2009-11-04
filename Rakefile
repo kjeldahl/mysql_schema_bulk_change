@@ -1,3 +1,4 @@
+Rake.application.options.trace = true
 %w[rubygems rake rake/clean fileutils newgem rubigen hoe].each { |f| require f }
 require File.dirname(__FILE__) + '/lib/mysql_schema_bulk_change'
 
