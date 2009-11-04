@@ -17,7 +17,7 @@ a lot less time, especially if the table is large.
 
 == SYNOPSIS:
 
-  In a migration:
+In a migration:
   
   change_table :large_table do |t|
     t.string :name
@@ -31,10 +31,21 @@ a lot less time, especially if the table is large.
 
 * ActiveRecord 2.3.2
 * Mysql
+* RSpec for testing
 
 == INSTALL:
 
-* sudo gem install kjeldahl-mysql_schema_bulk_change --source http://gems.github.com
+* sudo gem install mysql_schema_bulk_change --source http://gemcutter.org
+
+== TEST:
+
+Create a database called kjeldahl_mysql_schema_bulk_change_test
+
+ mysqladmin -u root create kjeldahl_mysql_schema_bulk_change_test
+ 
+Run rake
+
+  rake
 
 == LICENSE:
 

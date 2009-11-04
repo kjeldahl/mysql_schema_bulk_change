@@ -25,4 +25,18 @@ require 'newgem/tasks' # load /tasks/*.rake
 Dir['tasks/**/*.rake'].each { |t| load t }
 
 # TODO - want other tests/tasks run by default? Add them to the list
-# task :default => [:spec, :features]
+task :create_db do
+  cmd_string = %[mysqladmin create kjeldahl_mysql_schema_bulk_change_test -u build]
+  system cmd_string
+end
+
+def runcoderun?
+  ENV["RUN_CODE_RUN"]
+end
+
+if runcoderun?
+  task :default => [:create_db, :spec]
+else
+  task :default => :spec
+end
+

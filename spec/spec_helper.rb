@@ -11,23 +11,24 @@ require 'active_record'
 
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 
-# Setup database connection piggy back on rails' unit test database
-
 require 'logger'
+
+def runcoderun?
+  ENV["RUN_CODE_RUN"]
+end
 
 ActiveRecord::Base.logger = Logger.new("debug.log")
 
-# GRANT ALL PRIVILEGES ON activerecord_unittest.* to 'rails'@'localhost';
-# GRANT ALL PRIVILEGES ON activerecord_unittest2.* to 'rails'@'localhost';
+db_user = runcoderun? ? 'build' : 'root'
 
 ActiveRecord::Base.configurations = {
-  'arunit' => {
+  'test_db' => {
     :adapter  => 'mysql',
-    :username => 'rails',
+    :username => db_user,
     :encoding => 'utf8',
-    :database => 'activerecord_unittest',
+    :database => 'kjeldahl_mysql_schema_bulk_change_test',
   }}
 
-ActiveRecord::Base.establish_connection 'arunit'
+ActiveRecord::Base.establish_connection 'test_db'
 
 require 'mysql_schema_bulk_change'
