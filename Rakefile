@@ -1,4 +1,4 @@
-%w[rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
+%w[rubygems rake rake/clean fileutils newgem rubigen hoe].each { |f| require f }
 require File.dirname(__FILE__) + '/lib/mysql_schema_bulk_change'
 
 # Generate all the Rake tasks
@@ -39,4 +39,3 @@ if runcoderun?
 else
   task :default => :spec
 end
-
